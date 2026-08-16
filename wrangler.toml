@@ -1,0 +1,5 @@
+# Cloudflare Pages 部署配置
+# name 锁定 Pages 项目（与 Cloudflare 后台项目名一致，区分大小写）
+# pages_build_output_dir 声明静态资源目录；命令显式传 public 时以此为准
+name = "youzaiworldwebassets"
+pages_build_output_dir = "public"
