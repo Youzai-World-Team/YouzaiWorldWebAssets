@@ -1,0 +1,26 @@
+# Cloudflare Pages 边缘响应头配置
+# 部署后对所有请求生效，用于解决跨域字体加载并设置长缓存。
+
+# 字体：跨域 @font-face 必须返回 CORS 头，否则主站无法加载
+/fonts/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+# 图片：文件名固定，可 immutable 长缓存
+/images/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+# 音频：背景音乐，长缓存
+/medias/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+# 视频：教程视频，长缓存
+/videos/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+# favicon 兜底，较短缓存便于更新
+/favicon.ico
+  Cache-Control: public, max-age=86400
