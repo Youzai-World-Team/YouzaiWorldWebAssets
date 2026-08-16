@@ -1,4 +1,0 @@
-# Cloudflare Pages 部署配置
-# 声明静态资源输出目录，使 `npx wrangler deploy` 能定位到 public/ 下的资源并上传。
-# 对应 Cloudflare Pages 后台的「构建输出目录」，此处用配置文件固化，避免命令探测失败。
-pages_build_output_dir = "public"
