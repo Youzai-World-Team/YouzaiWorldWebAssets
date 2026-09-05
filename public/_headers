@@ -6,8 +6,22 @@
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=31536000, immutable
 
-# 图片：文件名固定，可 immutable 长缓存
+# 图片：文件名固定，可 immutable 长缓存；logo.png 供官网 Canvas 像素场景读取
 /images/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+# 后台设备标识图标：与 API 管理后台跨域复用
+/browser-icons/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+/os-icon/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+# PWA 图标：manifest 位于 API 域名，图标由资源站提供
+/pwa/*
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=31536000, immutable
 
@@ -23,4 +37,5 @@
 
 # favicon 兜底，较短缓存便于更新
 /favicon.ico
+  Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=86400
